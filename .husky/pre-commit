@@ -1,5 +1,9 @@
-echo 'Verificando a formatação e formatando'
-npx prettier --check 'src/**/*.{ts,tsx}' --write
+echo 'Verificando a formatação'
+npx prettier --check 'src/**/*.ts'
+
+echo 'Formatando'
+npx prettier --write 'src/**/*.ts'
+
 
 echo 'Rodando o lint'
-
+npx npx eslint 'src/**/*.ts' --fix
