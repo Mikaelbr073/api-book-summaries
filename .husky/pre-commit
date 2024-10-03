@@ -1,1 +1,5 @@
-npx lint-staged
+echo 'Verificando a formatação e formatando'
+npx prettier --check 'src/**/*.{ts,tsx}' --write
+
+echo 'Rodando o lint'
+

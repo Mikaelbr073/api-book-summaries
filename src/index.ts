@@ -1,2 +1,2 @@
-const mikael: string = "Mikael"
-console.log("mikael!!")
+console.log("mikael!!!")
+
