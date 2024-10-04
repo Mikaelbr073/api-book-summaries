@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node dist/index.js",
     "build": "tsc && tsc-alias",
-    "dev": "nodemon --watch \"src/\" --exec \"ts-node -r tsconfig-paths/register src/index.ts\" -e ts",
+    "start:dev": "nodemon --watch \"src/\" --exec \"ts-node -r tsconfig-paths/register src/index.ts\" -e ts",
     "prepare": "husky",
     "test": "jest --passWithNoTests",
     "test:watch": "npm test --watch",
@@ -18,11 +18,14 @@
   "license": "ISC",
   "devDependencies": {
     "@eslint/js": "^9.11.1",
+    "@types/express": "^5.0.0",
     "@types/jest": "^29.5.13",
     "@types/node": "^22.7.4",
+    "dotenv": "^16.4.5",
     "eslint": "^9.11.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-staged": "^1.0.1",
+    "express": "^4.21.0",
     "globals": "^15.10.0",
     "husky": "^9.1.6",
     "jest": "^29.7.0",

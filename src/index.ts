@@ -1,11 +1,19 @@
-import Mikael from "@/one/two/tree/tree"
+import express from "express"
+import { Request, Response } from "express"
+import { config } from "dotenv"
+import { MongoGetUsersRepository } from "./repository/get-users/mongo-get-users"
+import { GetUsersController } from "./controllers/get-users/get-users"
 
-class Person{
-    comer(){
-        return "comi"
-    }
-}
+config()
+const app = express()
 
-console.log(new Mikael().falar())
+app.get("/users", async (req: Request, res: Response) => {
+  const mongoGetUsersRepository = new MongoGetUsersRepository();
+  const getUsersController = new GetUsersController(mongoGetUsersRepository)
+  const {body, statusCode} = await getUsersController.handle();
+  res.send(body).status(statusCode)
+})
 
-export default Person
+app.listen(process.env.PORT || 8000, () =>
+  console.log(`listening on port ${process.env.PORT}`),
+)

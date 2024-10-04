@@ -3,3 +3,6 @@ npx prettier --check 'src/**/*.ts' --write
 
 echo 'Rodando o lint'
 npx eslint 'src/**/*.ts' --fix
+
+echo 'Rodando os teste'
+npm run test:watch 
