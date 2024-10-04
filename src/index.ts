@@ -8,9 +8,9 @@ config()
 const app = express()
 
 app.get("/users", async (req: Request, res: Response) => {
-  const mongoGetUsersRepository = new MongoGetUsersRepository();
+  const mongoGetUsersRepository = new MongoGetUsersRepository()
   const getUsersController = new GetUsersController(mongoGetUsersRepository)
-  const {body, statusCode} = await getUsersController.handle();
+  const { body, statusCode } = await getUsersController.handle()
   res.send(body).status(statusCode)
 })
 

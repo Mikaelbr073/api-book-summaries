@@ -10,12 +10,12 @@ export class GetUsersController implements IGetUserController {
         body: users,
       }
     } catch (error) {
-        const erroMessage = (error instanceof Error) ? error.message : 'unknown error';
+      const erroMessage =
+        error instanceof Error ? error.message : "unknown error"
       return {
         statusCode: 500,
-        body: erroMessage
-    }
-        
+        body: erroMessage,
+      }
     }
   }
 }
