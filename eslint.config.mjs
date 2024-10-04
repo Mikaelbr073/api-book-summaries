@@ -8,6 +8,7 @@ export default [
     languageOptions: {
       globals: globals.browser,
     },
+    sourceType: "module",
     // Adiciona aqui o extends dentro de um objeto de configuração
   },
   pluginJs.configs.recommended,
